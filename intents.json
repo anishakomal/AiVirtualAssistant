@@ -1,5 +1,16 @@
 {
     "intents": [
+        {
+            "tag": "random advice",
+            "patterns": [
+                "give random advice",
+                "random advice",
+                "koi random advice do"
+            ],
+            "responses": [
+                "random advice"
+            ]
+        },
 
         {
             "tag": "google",

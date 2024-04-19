@@ -7,7 +7,12 @@ def Listen():
     with sr.Microphone() as source:
         print("Listening...")
         r.pause_threshold = 1
-        audio = r.listen(source,0,4)
+
+        # Adjust for ambient noise
+        r.adjust_for_ambient_noise(source)
+        r.energy_threshold = 100
+        audio = r.listen(source, 0, 4)
+
 
     try:
         print("Recognizing...")
