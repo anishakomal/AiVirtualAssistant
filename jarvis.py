@@ -34,7 +34,6 @@ from Task import NonInputExecution
 from Task import InputExecution
 
 
-
 def Main():
     sentence = Listen()
     result = str(sentence)
@@ -72,7 +71,7 @@ def Main():
                     NonInputExecution(reply)
 
                 elif "wikipedia" in reply:
-                    InputExecution(reply, sentence)  # reply => random response , result => str(sentence) == jo search kiya gya hai
+                    InputExecution(reply,sentence)  # reply => RandomResponse , result => str(sentence) == jo search kiya gya hai
 
                 elif "google" in reply:
                     InputExecution(reply, result)
@@ -93,7 +92,7 @@ def Main():
                     InputExecution(reply, result)
 
                 elif "movie" in reply:
-                    InputExecution(reply,tag)
+                    InputExecution(reply, tag)
 
 
 
