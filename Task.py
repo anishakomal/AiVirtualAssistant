@@ -46,6 +46,10 @@ def internet_speed():  # todo **************************** internet speed ******
     from Speedtest import get_speedtest
     get_random_advice()
 
+def movies():
+    from MoviesDetails import moviesInfo
+    moviesInfo()
+
 
 def NonInputExecution(query):
 
@@ -68,6 +72,7 @@ def NonInputExecution(query):
 
 
 def InputExecution(tag, query):
+
     if "wikipedia" in tag:
         query = str(query).replace("who is", "").replace("about", "").replace("wikipedia", "").replace("what is", "")
         import wikipedia
@@ -87,6 +92,9 @@ def InputExecution(tag, query):
         translated_text = translate_text(text_to_translate, target_language)
         print("Translated text:", translated_text)
         Say(translated_text)
+
+    elif "movie" in tag:
+        movies()
 
 
 
