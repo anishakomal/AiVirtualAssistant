@@ -87,8 +87,8 @@ for epoch in range(num_epochs):
         loss.backward()
         optimizer.step()
 
-    if (epoch + 1) % 100 == 0:
-        print(f'Epoch [{epoch + 1}/{num_epochs}], Loss: {loss.item():.4f}')
+    # if (epoch + 1) % 100 == 0:
+    #     print(f'Epoch [{epoch + 1}/{num_epochs}], Loss: {loss.item():.4f}')
 
 print(f"Final Loss : {loss.item():.4f}")
 
