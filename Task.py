@@ -1,8 +1,11 @@
 # Functions
 import datetime
 import requests
-import speedtest
+#import speedtest
 import smtplib
+from Speak import Say
+from googletrans import Translator
+from Listen import Listen
 from Speak import Say
 
 
@@ -31,6 +34,12 @@ def get_random_advice():  # todo ********************************* Random jokes
     res = requests.get("https://api.adviceslip.com/advice").json()
     advice = res['slip']['advice']
     print(advice)
+
+def translate_text(text, target_language):
+    translator = Translator()
+    translated_text = translator.translate(text, dest=target_language)
+    return translated_text.text
+
 
 
 # def internet_speed():  # todo **************************** internet speed ********
@@ -62,3 +71,15 @@ def InputExecution(tag, query):
         query = str(query).replace("google", "").replace("search", "")
         import pywhatkit
         pywhatkit.search(query)  # Browser Open hoga or usmei search hoga
+
+    elif "translate" in tag:
+        print("What would you like to translate?")
+        text_to_translate = Listen()
+        print("To which language?")
+        target_language = Listen()
+        translated_text = translate_text(text_to_translate, target_language)
+        print("Translated text:", translated_text)
+        Say(translated_text)
+
+
+

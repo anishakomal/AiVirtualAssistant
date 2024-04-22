@@ -1,6 +1,7 @@
 import random
 import json
 import torch.cuda
+import datetime
 
 from Brain import NeuralNet
 from NeuralNetwork import bag_of_words, tokenize
@@ -31,6 +32,7 @@ from Listen import Listen
 from Speak import Say
 from Task import NonInputExecution
 from Task import InputExecution
+
 
 
 def Main():
@@ -70,13 +72,16 @@ def Main():
                     NonInputExecution(reply)
 
                 elif "wikipedia" in reply:
-                    InputExecution(reply, sentence)  # reply => tag , result => str(sentence) == jo search kiya gya hai
+                    InputExecution(reply, sentence)  # reply => random response , result => str(sentence) == jo search kiya gya hai
 
                 elif "google" in reply:
                     InputExecution(reply, result)
 
                 elif "random advice" in reply:
                     NonInputExecution(reply)
+
+                elif "translate" in reply:
+                    InputExecution(reply, result)
 
                 else:
                     Say(reply)
