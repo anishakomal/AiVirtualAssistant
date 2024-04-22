@@ -1,6 +1,76 @@
 {
     "intents": [
         {
+            "tag": "movie",
+            "patterns": [
+                "movie information",
+                "movie imdb rating",
+                "movie type",
+                "movie Released date",
+                "movie award"
+
+            ],
+            "responses": [
+                "movie"
+            ]
+        },
+        {
+            "tag": "translate",
+            "patterns": [
+                "translate english to hindi",
+                "please translate",
+                "can you translate it",
+                "translate"
+
+            ],
+            "responses": [
+                "translate"
+            ]
+        },
+        {
+            "tag": "open",
+            "patterns": [
+                "search google.com",
+                "browse udemy.com",
+                "fast.com",
+                "open Notepad",
+                "open chrome",
+                "launch command prompt",
+               "please open calculator"
+
+
+            ],
+            "responses": [
+                "open"
+            ]
+        },
+        {
+            "tag": "close",
+            "patterns": [
+                "close one tab",
+                 "close two tab",
+                 "close three tab",
+                "close yhe tab"
+
+            ],
+            "responses": [
+                "close"
+            ]
+        },
+        {
+            "tag": "internet speed",
+            "patterns": [
+                "find internet speed",
+                "internet speed",
+                "find wifi speed",
+                "intenet speed kya hai"
+
+            ],
+            "responses": [
+                "internet speed"
+            ]
+        },
+        {
             "tag": "random advice",
             "patterns": [
                 "give random advice",
@@ -429,7 +499,8 @@
                 "Whats is date",
                 "what's the date",
                 "date",
-                "tareek"
+                "tarikh",
+                "today's date"
 
             ],
             "responses": [
