@@ -1,7 +1,5 @@
-import requests
 from Speak import Say
-
-
+import requests
 
 def moviesInfo():
     # Replace 'YOUR_API_KEY' with your actual OMDb API key
@@ -25,16 +23,10 @@ def moviesInfo():
         # Parse JSON response
         movie_data = response.json()
 
-       
-        
-
-        # You can access more information from the 'movie_data' dictionary
-        # Access more information from the 'movie_data' dictionary
-
         # Display movie information
         print('Title:', movie_data['Title'])
         print('Year:', movie_data['Year'])
-        print('Rated:', movie_data['Rated'])    # rating 
+        print('Rated:', movie_data['Rated'])
         print('Released:', movie_data['Released'])
         print('Runtime:', movie_data['Runtime'])
         print('Genre:', movie_data['Genre'])
@@ -46,9 +38,12 @@ def moviesInfo():
         print('Country:', movie_data['Country'])
         print('Awards:', movie_data['Awards'])
         print('Poster URL:', movie_data['Poster'])
-        print('IMDb Rating:', movie_data['imdbRating']) # Display IMDb rating
+        print('IMDb Rating:', movie_data['imdbRating'])   # Display IMDb rating
         print('Plot:', movie_data['Plot'])
     else:
         print('Error:', response.status_code)
+
+        # You can access more information from the 'movie_data' dictionary
+        # Access more information from the 'movie_data' dictionary
 
 
