@@ -83,6 +83,20 @@ def Main():
                 elif "translate" in reply:
                     InputExecution(reply, result)
 
+                elif "internet speed" in reply:
+                    NonInputExecution(reply)
+
+                elif "open" in reply:
+                    InputExecution(reply, result)
+
+                elif "close" in reply:
+                    InputExecution(reply, result)
+
+                elif "movie" in reply:
+                    InputExecution(reply,tag)
+
+
+
                 else:
                     Say(reply)
 

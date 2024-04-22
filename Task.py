@@ -42,10 +42,13 @@ def translate_text(text, target_language):
 
 
 
-# def internet_speed():  # todo **************************** internet speed ********
+def internet_speed():  # todo **************************** internet speed ********
+    from Speedtest import get_speedtest
+    get_random_advice()
 
 
 def NonInputExecution(query):
+
     query = str(query)
     if "time" in query:
         Time()
@@ -58,6 +61,10 @@ def NonInputExecution(query):
 
     elif "random advice" in query:
         get_random_advice()
+
+    elif "internet Speed" in query:
+        internet_speed()
+
 
 
 def InputExecution(tag, query):

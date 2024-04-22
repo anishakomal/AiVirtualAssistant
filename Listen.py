@@ -1,11 +1,14 @@
 import speech_recognition as sr #pip install speechrecognition
+from colorama import init, Fore, Back, Style    # pip install colorama
 
+# Initialize colorama
+init()
 def Listen():
 
     r = sr.Recognizer()
 
     with sr.Microphone() as source:
-        print("Listening...")
+        print(Fore.LIGHTBLUE_EX +"Listening...")
         r.pause_threshold = 1
 
         # Adjust for ambient noise
@@ -15,12 +18,24 @@ def Listen():
 
 
     try:
-        print("Recognizing...")
+        print(Fore.LIGHTYELLOW_EX +"Recognizing...")
         query = r.recognize_google(audio,language="en-in")
         print(f"You Said : {query}")
 
-    except:
-        return ""
+
+    except sr.UnknownValueError:
+
+        print(Fore.RED + "Sorry, I could not understand what you said.")
+
+        return None
+
+    except sr.RequestError:
+
+        print(Fore.YELLOW + "Could not request results.")
+
+        return None
 
     query = str(query)
     return query.lower()
+
+Listen()

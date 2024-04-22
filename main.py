@@ -57,7 +57,8 @@ def takeCommand_Hindi():
     return query.lower()
 
 
-
+input =takeCommand_Hindi()
+speak(input)
 
 
 
