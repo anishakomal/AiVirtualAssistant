@@ -1,9 +1,15 @@
-from Speak import Say
 import requests
+import credential
 
 
 # Function to get the latest news
-def get_latest_news(api_key, country='in', category=None, query=None):
+def get_latest_news():
+
+    api_key = credential.news_api_key
+    country = 'in'  # print('You can specify a country code')
+    category = None  # print('Optional: specify a news category')
+    query = None  # print('Optional: specify a query to search for in headlines')
+
     # Base URL for News API
     base_url = "https://newsapi.org/v2/top-headlines"
 
@@ -37,14 +43,11 @@ def get_latest_news(api_key, country='in', category=None, query=None):
         print(f"Failed to retrieve news. Status code: {response.status_code}")
 
 
-# Replace 'your_api_key_here' with your News API key
-api_key = "9681a78a7f5145a29836f9086199ef76"
-country = 'in'
-category = None
-query = "ipl 2024"
 
-# Fetch the latest news headlines from the United States
-get_latest_news(api_key, country,category,query)
+
+# get_latest_news(api_key, country, category, query)  # Fetch the latest news headlines from the United States
+
+
 
 # Categories:
 # News API supports the following categories:
@@ -68,5 +71,3 @@ get_latest_news(api_key, country,category,query)
 # SpaceX: To search for news about the SpaceX company and its space missions.
 # climate change: To search for news about climate change.
 # You can specify a query in the parameters of your function when fetching news articles. The function will then return news articles that contain the specified query in their titles or descriptions.
-
-

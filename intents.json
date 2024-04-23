@@ -1,17 +1,20 @@
 {
     "intents": [
+
         {
-            "tag": "movie",
+            "tag": "news",
             "patterns": [
-                "movie information",
-                "movie imdb rating",
-                "movie type",
-                "movie Released date",
-                "movie award"
+                "get latest news",
+                "top 10 news",
+                "india news",
+                "new in india",
+                "today's news",
+                "news headlines",
+                "news"
 
             ],
             "responses": [
-                "movie"
+                "news"
             ]
         },
         {
@@ -58,7 +61,7 @@
             ]
         },
         {
-            "tag": "internet speed",
+            "tag": "internetSpeed",
             "patterns": [
                 "find internet speed",
                 "internet speed",
@@ -67,7 +70,7 @@
 
             ],
             "responses": [
-                "internet speed"
+                "internetSpeed"
             ]
         },
         {

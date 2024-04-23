@@ -45,3 +45,4 @@ def get_speedtest():
     print(Fore.MAGENTA + "-"*80)
     print(Fore.CYAN +
           f"HOST:{res_dict['server']['host']} | SPONSOR:{res_dict['server']['sponsor']} | LATENCY: {res_dict['server']['latency']:.2f}".center(80))
+

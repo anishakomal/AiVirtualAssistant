@@ -36,7 +36,7 @@ from Task import InputExecution
 
 def Main():
     sentence = Listen()
-    result = str(sentence)
+    query = str(sentence)
 
     if sentence == "bye":
         exit()
@@ -71,33 +71,39 @@ def Main():
                     NonInputExecution(reply)
 
                 elif "wikipedia" in reply:
-                    InputExecution(reply,sentence)  # reply => RandomResponse , result => str(sentence) == jo search kiya gya hai
+                    InputExecution(reply, sentence)  # reply => RandomResponse, query => str(sentence) == jo search kiya gya hai
 
                 elif "google" in reply:
-                    InputExecution(reply, result)
+                    InputExecution(reply, query)
 
                 elif "random advice" in reply:
                     NonInputExecution(reply)
 
                 elif "translate" in reply:
-                    InputExecution(reply, result)
+                    InputExecution(reply, query)
 
-                elif "internet speed" in reply:
+                elif "internetSpeed" in reply:
                     NonInputExecution(reply)
 
                 elif "open" in reply:
-                    InputExecution(reply, result)
+                    InputExecution(reply, query)
 
                 elif "close" in reply:
-                    InputExecution(reply, result)
+                    InputExecution(reply, query)
 
                 elif "movie" in reply:
                     InputExecution(reply, tag)
 
+                elif "news" in reply:
+                    InputExecution(reply, query)
+
+                elif "temperature" in reply:
+                    InputExecution(reply,query)
+
 
 
                 else:
-                    Say(reply)
+                    print(reply)
 
 
 while True:

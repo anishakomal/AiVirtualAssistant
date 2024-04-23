@@ -1,12 +1,11 @@
 # Functions
 import datetime
 import requests
-#import speedtest
-import smtplib
+import pywhatkit
 from Speak import Say
 from googletrans import Translator
 from Listen import Listen
-from Speak import Say
+import credential
 
 
 # 2-Types
@@ -29,11 +28,11 @@ def Day():
     Say(day)
 
 
-def get_random_advice():  # todo ********************************* Random jokes
-
+def get_random_advice():
     res = requests.get("https://api.adviceslip.com/advice").json()
     advice = res['slip']['advice']
     print(advice)
+
 
 def translate_text(text, target_language):
     translator = Translator()
@@ -41,18 +40,38 @@ def translate_text(text, target_language):
     return translated_text.text
 
 
-
-def internet_speed():  # todo **************************** internet speed ********
+def internet_speed():
     from Speedtest import get_speedtest
-    get_random_advice()
+    get_speedtest()
 
-def movies():
+
+def Movies():
     from MoviesDetails import moviesInfo
     moviesInfo()
 
 
-def NonInputExecution(query):
+def News():
+    from NewHeadline import get_latest_news
+    get_latest_news()
 
+
+
+def WhatsApp():
+    Say("Enter the phone Number")
+    number = input("Enter Mob. Number:")
+    Say("Write your Message here:")
+    user_message = input("Message:")
+    pywhatkit.sendwhatmsg_instantly(f"+91{number}", user_message)
+    print("Message Sent Successfully!")
+    Say("Message Sent Successfully!")
+
+def Temperature():
+    from Temperature import get_weather
+    get_weather()
+
+
+
+def NonInputExecution(query):
     query = str(query)
     if "time" in query:
         Time()
@@ -70,9 +89,7 @@ def NonInputExecution(query):
         internet_speed()
 
 
-
 def InputExecution(tag, query):
-
     if "wikipedia" in tag:
         query = str(query).replace("who is", "").replace("about", "").replace("wikipedia", "").replace("what is", "")
         import wikipedia
@@ -94,7 +111,13 @@ def InputExecution(tag, query):
         Say(translated_text)
 
     elif "movie" in tag:
-        movies()
+        Movies()
 
+    elif "news" in tag:
+        News()
 
+    elif "whatsapp" in tag:
+        WhatsApp()
 
+    elif "temperature" in tag:
+        Temperature()

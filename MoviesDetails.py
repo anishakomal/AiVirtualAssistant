@@ -1,9 +1,11 @@
 from Speak import Say
 import requests
+import credential
+
 
 def moviesInfo():
     # Replace 'YOUR_API_KEY' with your actual OMDb API key
-    api_key = '4a2a54e7'
+    api_key = credential.movie_api_key
 
     # Base URL for OMDb API
     base_url = 'http://www.omdbapi.com/'
@@ -38,12 +40,10 @@ def moviesInfo():
         print('Country:', movie_data['Country'])
         print('Awards:', movie_data['Awards'])
         print('Poster URL:', movie_data['Poster'])
-        print('IMDb Rating:', movie_data['imdbRating'])   # Display IMDb rating
+        print('IMDb Rating:', movie_data['imdbRating'])  # Display IMDb rating
         print('Plot:', movie_data['Plot'])
     else:
         print('Error:', response.status_code)
 
         # You can access more information from the 'movie_data' dictionary
         # Access more information from the 'movie_data' dictionary
-
-
